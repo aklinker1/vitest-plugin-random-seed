@@ -1,6 +1,24 @@
 {
   "name": "vitest-plugin-random-seed",
   "version": "1.0.2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aklinker1/vitest-plugin-random-seed"
+  },
+  "homepage": "https://github.com/aklinker1/vitest-plugin-random-seed",
+  "author": {
+    "name": "Aaron Klinker",
+    "email": "aaronklinker1+npm@gmail.com"
+  },
+  "keywords": [
+    "seed",
+    "test",
+    "vitest",
+    "faker",
+    "chance",
+    "falso"
+  ],
+  "license": "MIT",
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
