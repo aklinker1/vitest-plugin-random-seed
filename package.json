@@ -29,7 +29,8 @@
     "test:coverage": "vitest --coverage",
     "build": "bunx --bun unbuild",
     "check": "bunx --bun check",
-    "prepare": "simple-git-hooks"
+    "prepare": "simple-git-hooks",
+    "prepublish": "bun run build"
   },
   "devDependencies": {
     "@aklinker1/check": "^1.0.3",
