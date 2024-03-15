@@ -1,6 +1,14 @@
 # Changelog
 
 
+## v1.0.3
+
+[compare changes](https://github.com/aklinker1/vitest-plugin-random-seed/compare/v1.0.2...v1.0.3)
+
+### 🩹 Fixes
+
+- Add NPM package metadata ([7c7280b](https://github.com/aklinker1/vitest-plugin-random-seed/commit/7c7280b))
+
 ## v1.0.2
 
 [compare changes](https://github.com/aklinker1/vitest-plugin-random-seed/compare/v1.0.1...v1.0.2)

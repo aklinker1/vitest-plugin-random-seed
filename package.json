@@ -1,6 +1,6 @@
 {
   "name": "vitest-plugin-random-seed",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "repository": {
     "type": "git",
     "url": "https://github.com/aklinker1/vitest-plugin-random-seed"
