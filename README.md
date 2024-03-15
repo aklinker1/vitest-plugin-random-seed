@@ -20,7 +20,11 @@ export default defineConfig({
 
 And in your tests, you can access the seed via `import.meta.test.SEED`! That's really all this plugin does...
 
-This plugin really shines when used in combination with [ChanceJS](), [FakerJS](https://github.com/faker-js/faker), or [Falso](https://github.com/ngneat/falso) to generate reproducable, but random test data.
+```ts
+console.log(import.meta.test.SEED);
+```
+
+This plugin really shines when used in combination with [ChanceJS](https://github.com/chancejs/chancejs), [Falso](https://github.com/ngneat/falso), or [FakerJS](https://github.com/faker-js/faker) to generate reproducable, but random test data.
 
 ### Chance
 
