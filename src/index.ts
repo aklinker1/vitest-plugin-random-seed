@@ -6,6 +6,7 @@ let seed: number;
 export default function RandomSeed(options?: RandomSeedPluginOptions) {
   const shouldLog = seed == null;
   seed ??= options?.seed ?? getEnvSeed() ?? getRandomSeed();
+  const definition = options?.define ?? 'import.meta.test.SEED';
   return {
     name: 'random-seed',
     apply: (_, { mode }) => mode === 'test',
@@ -15,7 +16,7 @@ export default function RandomSeed(options?: RandomSeedPluginOptions) {
       }
       return {
         define: {
-          'import.meta.test.SEED': JSON.stringify(seed),
+          [definition]: JSON.stringify(seed),
         },
       };
     },
@@ -23,7 +24,17 @@ export default function RandomSeed(options?: RandomSeedPluginOptions) {
 }
 
 export interface RandomSeedPluginOptions {
+  /**
+   * Hardcode a seed value.
+   */
   seed?: number;
+  /**
+   * Definition added to Vite's [`define`](https://vitejs.dev/config/shared-options.html#define)
+   * option. Set this value to change the variable the seed is accessed at.
+   *
+   * @default "import.meta.test.SEED"
+   */
+  define?: string;
 }
 
 function getRandomSeed(): number {
