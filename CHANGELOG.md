@@ -1,6 +1,14 @@
 # Changelog
 
 
+## v1.1.0
+
+[compare changes](https://github.com/aklinker1/vitest-plugin-random-seed/compare/v1.0.3...v1.1.0)
+
+### 🚀 Enhancements
+
+- Add support for custom definition ([6bd6555](https://github.com/aklinker1/vitest-plugin-random-seed/commit/6bd6555))
+
 ## v1.0.3
 
 [compare changes](https://github.com/aklinker1/vitest-plugin-random-seed/compare/v1.0.2...v1.0.3)
