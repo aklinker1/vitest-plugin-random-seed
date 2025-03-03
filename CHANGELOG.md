@@ -1,6 +1,14 @@
 # Changelog
 
 
+## v1.1.1
+
+[compare changes](https://github.com/aklinker1/vitest-plugin-random-seed/compare/v1.1.0...v1.1.1)
+
+### 🏡 Chore
+
+- Add support for Vite 6 ([c26c3f5](https://github.com/aklinker1/vitest-plugin-random-seed/commit/c26c3f5))
+
 ## v1.1.0
 
 [compare changes](https://github.com/aklinker1/vitest-plugin-random-seed/compare/v1.0.3...v1.1.0)
