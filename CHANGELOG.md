@@ -1,6 +1,25 @@
 # Changelog
 
 
+## v1.1.2
+
+[compare changes](https://github.com/aklinker1/vitest-plugin-random-seed/compare/v1.1.1...v1.1.2)
+
+### 🏡 Chore
+
+- Upgrade to bun 1.3 and use text lockfile ([c739d69](https://github.com/aklinker1/vitest-plugin-random-seed/commit/c739d69))
+- Update all dependencies and migrate to `vitest.config.ts` ([#2](https://github.com/aklinker1/vitest-plugin-random-seed/pull/2))
+- Remove changelogen config and use defaults ([26078b9](https://github.com/aklinker1/vitest-plugin-random-seed/commit/26078b9))
+
+### 🤖 CI
+
+- Refactor release workflow and support provence ([#3](https://github.com/aklinker1/vitest-plugin-random-seed/pull/3))
+- Remove JSR copy/paste error ([662d085](https://github.com/aklinker1/vitest-plugin-random-seed/commit/662d085))
+
+### ❤️ Contributors
+
+- Aaron ([@aklinker1](https://github.com/aklinker1))
+
 ## v1.1.1
 
 [compare changes](https://github.com/aklinker1/vitest-plugin-random-seed/compare/v1.1.0...v1.1.1)
