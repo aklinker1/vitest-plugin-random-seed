@@ -71,10 +71,5 @@
   },
   "lint-staged": {
     "*": "prettier --ignore-unknown --write"
-  },
-  "changelog": {
-    "excludeAuthors": [
-      "aaronklinker1@gmail.com"
-    ]
   }
 }
