@@ -19,6 +19,7 @@
 ### ❤️ Contributors
 
 - Aaron ([@aklinker1](https://github.com/aklinker1))
+- ayu ([@ayu-exorcist](https://github.com/ayu-exorcist))
 
 ## v1.1.1
 
