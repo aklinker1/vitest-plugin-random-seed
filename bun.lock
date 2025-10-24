@@ -4,7 +4,7 @@
     "": {
       "name": "vitest-plugin-random-seed",
       "devDependencies": {
-        "@aklinker1/check": "^2.1.0",
+        "@aklinker1/check": "^2.1.1",
         "@types/bun": "latest",
         "@vitest/coverage-v8": "^4.0.2",
         "lint-staged": "^16.2.6",
@@ -22,9 +22,7 @@
     },
   },
   "packages": {
-    "@aklinker1/check": ["@aklinker1/check@2.1.0", "", { "dependencies": { "@antfu/utils": "^0.7.7", "ci-info": "^4.0.0", "citty": "^0.1.6" }, "bin": { "check": "bin/check.mjs" } }, "sha512-x+0vxb0vHV+6ZskcLYobI6FCAFG1jwVGgKuH9pTfHLW3vlzbGSGUKcxbCuMI3Q51WZS8oE4UfB+4v5M2+0uz1g=="],
-
-    "@antfu/utils": ["@antfu/utils@0.7.7", "", {}, "sha512-gFPqTG7otEJ8uP6wrhDv6mqwGWYZKNvAcCq6u9hOj0c+IKCEsY4L1oC9trPq2SaWIzAfHvqfBDxF591JkMf+kg=="],
+    "@aklinker1/check": ["@aklinker1/check@2.1.1", "", { "dependencies": { "ci-info": "*" }, "bin": { "check": "bin/check.mjs" } }, "sha512-ZVmL24bFaKDlIlsc2UPQbKX8sEvlUdrH5WnRs2w0ZEnOnIuFpqFbrFI9znymcPVmnJZR6ZszmGWNfzuYvEm/tg=="],
 
     "@babel/code-frame": ["@babel/code-frame@7.27.1", "", { "dependencies": { "@babel/helper-validator-identifier": "^7.27.1", "js-tokens": "^4.0.0", "picocolors": "^1.1.1" } }, "sha512-cjQ7ZlQ0Mv3b47hABuTevyTuYN4i+loJKGeV9flcCgIK37cCXRh+L1bd3iBHlynerhQ7BhCkn2BPbQUL+rGqFg=="],
 
