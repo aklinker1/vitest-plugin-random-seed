@@ -18,13 +18,13 @@ export default defineConfig({
 });
 ```
 
-And in your tests, you can access the seed via `import.meta.test.SEED`! That's really all this plugin does...
+And in your tests, you can access the seed via `__TEST_SEED__`!
 
 ```ts
-console.log(import.meta.test.SEED);
+console.log(__TEST_SEED__);
 ```
 
-This plugin really shines when used in combination with [ChanceJS](https://github.com/chancejs/chancejs), [Falso](https://github.com/ngneat/falso), or [FakerJS](https://github.com/faker-js/faker) to generate reproducable, but random test data.
+This plugin really shines when used in combination with [ChanceJS](https://github.com/chancejs/chancejs), [Falso](https://github.com/ngneat/falso), or [FakerJS](https://github.com/faker-js/faker) to generate reproducible, but random test data.
 
 ### Chance
 
@@ -32,7 +32,7 @@ This plugin really shines when used in combination with [ChanceJS](https://githu
 // src/utils/testing/fake-objects.ts
 import seed from 'chance';
 
-export const chance = seed(import.meta.test.SEED);
+export const chance = seed(__TEST_SEED__);
 
 export function fakeFilename() {
   return chance.string();
@@ -45,7 +45,7 @@ export function fakeFilename() {
 // src/utils/testing/fake-objects.ts
 import { faker } from '@faker-js/faker';
 
-faker.seed(import.meta.test.SEED);
+faker.seed(__TEST_SEED__);
 
 export function fakeFilename() {
   return faker.string.alphanumeric();
@@ -58,7 +58,7 @@ export function fakeFilename() {
 // src/utils/testing/fake-objects.ts
 import { randDirectoryPath, seed } from '@ngneat/falso';
 
-seed(import.meta.test.SEED);
+seed(__TEST_SEED__);
 
 export function fakeFilename() {
   return randFileName();
@@ -67,7 +67,7 @@ export function fakeFilename() {
 
 ## TypeScript Types
 
-To add types for `import.meta.test.SEED`, add `vitest-plugin-random-seed/types` to your `tsconfig.json`:
+To add types for `__TEST_SEED__`, add `vitest-plugin-random-seed/types` to your `tsconfig.json`:
 
 ```json
 {
@@ -99,7 +99,7 @@ import { seed } from '@fakerjs/faker';
 import { beforeEach } from 'vitest';
 
 beforeEach(() => {
-  seed(import.meta.test.SEED);
+  seed(__TEST_SEED__);
 });
 ```
 

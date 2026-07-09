@@ -43,7 +43,7 @@ describe('Random Seed Plugin', () => {
       const config1 = plugin.config();
       const config2 = plugin.config();
 
-      expect(config1.define['import.meta.test.SEED']).not.toBeUndefined();
+      expect(config1.define['__TEST_SEED__']).not.toBeUndefined();
       expect(config1).toEqual(config2);
     });
 
@@ -52,7 +52,7 @@ describe('Random Seed Plugin', () => {
       const config1 = RandomSeed().config();
       const config2 = RandomSeed().config();
 
-      expect(config1.define['import.meta.test.SEED']).not.toBeUndefined();
+      expect(config1.define['__TEST_SEED__']).not.toBeUndefined();
       expect(config1).toEqual(config2);
     });
 
@@ -65,7 +65,7 @@ describe('Random Seed Plugin', () => {
 
       expect(config).toEqual({
         define: {
-          'import.meta.test.SEED': expectedSeed,
+          __TEST_SEED__: expectedSeed,
         },
       });
     });
@@ -79,7 +79,7 @@ describe('Random Seed Plugin', () => {
 
       expect(config).toEqual({
         define: {
-          'import.meta.test.SEED': String(expectedSeed),
+          __TEST_SEED__: String(expectedSeed),
         },
       });
     });
@@ -91,7 +91,7 @@ describe('Random Seed Plugin', () => {
         process.env.TEST_SEED = String(seed);
         const config = RandomSeed().config();
 
-        expect(config.define['import.meta.test.SEED']).not.toBe(String(seed));
+        expect(config.define['__TEST_SEED__']).not.toBe(String(seed));
       },
     );
   });
