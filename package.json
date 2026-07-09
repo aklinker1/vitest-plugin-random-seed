@@ -42,6 +42,9 @@
     "check": "check",
     "prepublish": "bun run build"
   },
+  "dependencies": {
+    "@aklinker1/zero-factory": "^1.2.1"
+  },
   "devDependencies": {
     "@aklinker1/check": "^2.4.0",
     "@types/bun": "1.3.14",

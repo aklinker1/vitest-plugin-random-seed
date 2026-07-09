@@ -4,6 +4,9 @@
   "workspaces": {
     "": {
       "name": "vitest-plugin-random-seed",
+      "dependencies": {
+        "@aklinker1/zero-factory": "^1.2.1",
+      },
       "devDependencies": {
         "@aklinker1/check": "^2.4.0",
         "@types/bun": "1.3.14",
@@ -26,6 +29,8 @@
   },
   "packages": {
     "@aklinker1/check": ["@aklinker1/check@2.4.0", "", { "bin": { "check": "bin/check.mjs" } }, "sha512-HkISZz9zeE34IVvCJfisvdp544B4blb2mO1a6UQotBof2mjToFs430FzSKX/lamfCPwYlj2xkYyYD8MMnwsuRg=="],
+
+    "@aklinker1/zero-factory": ["@aklinker1/zero-factory@1.2.1", "", {}, "sha512-MWX0JTaWg+t/LficTsYSuFUd7IZcTAryl8KAAJFcUp0h79Ycet/2J8+j3w1MrB0Jus/99vLDfMqI0r2PYE93+Q=="],
 
     "@babel/helper-string-parser": ["@babel/helper-string-parser@7.29.7", "", {}, "sha512-Pb5ijPrZ89GDH8223L4UP8i6QApWxs04RbPQJTeWDV0/keR2E36MeKnyr6LYmUUvqRRI+Iv87SuF1W6ErINzYw=="],
 

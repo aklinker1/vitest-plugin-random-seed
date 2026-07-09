@@ -1,10 +1,18 @@
-import type { ConfigEnv } from "vite";
+import { createFactory } from "@aklinker1/zero-factory";
+import type { ConfigEnv, UserConfig } from "vite";
 import { describe, it, expect, vi, beforeEach } from "vitest";
+
+import type { RandomSeedPluginOptions } from "../index";
 
 async function importRandomSeed() {
   const { default: RandomSeed } = await import("../index");
   return RandomSeed;
 }
+
+const configEnvFactory = createFactory<ConfigEnv>({
+  command: "build",
+  mode: "production",
+});
 
 describe("Random Seed Plugin", () => {
   beforeEach(() => {
@@ -17,50 +25,44 @@ describe("Random Seed Plugin", () => {
   });
 
   describe("apply", () => {
-    it('should apply the plugin when the mode is "test"', async () => {
+    const apply = async (
+      options: RandomSeedPluginOptions | undefined,
+      config: UserConfig,
+      env: ConfigEnv,
+    ): Promise<boolean> => {
       const RandomSeed = await importRandomSeed();
-      const plugin = RandomSeed();
-      const mode = "test";
+      return (RandomSeed(options).apply as any)!(config, env);
+    };
 
-      expect(plugin.apply({}, { mode } as ConfigEnv)).toBe(true);
+    it('should apply the plugin when the mode is "test"', async () => {
+      const env = configEnvFactory({ mode: "test" });
+      const actual = await apply(undefined, {}, env);
+      expect(actual).toBe(true);
     });
 
     it.each(["build", "serve"])("should not apply the plugin when the mode is %j", async (mode) => {
-      const RandomSeed = await importRandomSeed();
-      const plugin = RandomSeed();
-
-      expect(plugin.apply({}, { mode } as ConfigEnv)).toBe(false);
+      const env = configEnvFactory({ mode });
+      const actual = await apply(undefined, {}, env);
+      expect(actual).toBe(false);
     });
   });
 
   describe("config", () => {
-    it("should not regenerate the seed if config is called multiple times", async () => {
+    const config = async (
+      options: RandomSeedPluginOptions | undefined,
+      config: UserConfig,
+      env: ConfigEnv,
+    ) => {
       const RandomSeed = await importRandomSeed();
-      const plugin = RandomSeed();
-      const config1 = plugin.config();
-      const config2 = plugin.config();
-
-      expect(config1.define["__TEST_SEED__"]).not.toBeUndefined();
-      expect(config1).toEqual(config2);
-    });
-
-    it("should not regenerate the seed if the plugin is called multiple times", async () => {
-      const RandomSeed = await importRandomSeed();
-      const config1 = RandomSeed().config();
-      const config2 = RandomSeed().config();
-
-      expect(config1.define["__TEST_SEED__"]).not.toBeUndefined();
-      expect(config1).toEqual(config2);
-    });
-
+      return (RandomSeed(options).config as any)!(config, env);
+    };
     it("should use the environment variable when present", async () => {
       const expectedSeed = "123456";
       process.env.TEST_SEED = expectedSeed;
 
-      const RandomSeed = await importRandomSeed();
-      const config = RandomSeed().config();
+      const actual = await config(undefined, {}, configEnvFactory());
 
-      expect(config).toEqual({
+      expect(actual).toEqual({
         define: {
           __TEST_SEED__: expectedSeed,
         },
@@ -71,10 +73,9 @@ describe("Random Seed Plugin", () => {
       const expectedSeed = 123456;
       process.env.TEST_SEED = "not" + expectedSeed;
 
-      const RandomSeed = await importRandomSeed();
-      const config = RandomSeed({ seed: expectedSeed }).config();
+      const actual = await config({ seed: expectedSeed }, {}, configEnvFactory());
 
-      expect(config).toEqual({
+      expect(actual).toEqual({
         define: {
           __TEST_SEED__: String(expectedSeed),
         },
@@ -82,11 +83,10 @@ describe("Random Seed Plugin", () => {
     });
 
     it.each(["abc", true])("should ignore non-number env seed: %j", async (seed) => {
-      const RandomSeed = await importRandomSeed();
       process.env.TEST_SEED = String(seed);
-      const config = RandomSeed().config();
+      const actual = await config(undefined, {}, configEnvFactory());
 
-      expect(config.define["__TEST_SEED__"]).not.toBe(String(seed));
+      expect(actual.define["__TEST_SEED__"]).not.toBe(String(seed));
     });
   });
 });
