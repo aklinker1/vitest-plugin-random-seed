@@ -38,7 +38,7 @@
   "scripts": {
     "test": "vitest",
     "test:coverage": "vitest --coverage",
-    "build": "tsdown src/{index.ts,types.d.ts}",
+    "build": "tsdown src/{index.ts,types.d.ts} --dts.tsgo",
     "check": "check",
     "prepublish": "bun run build"
   },
