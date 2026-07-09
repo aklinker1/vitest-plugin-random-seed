@@ -11,7 +11,7 @@ npm i vitest-plugin-random-seed
 In your `vite.config.ts` or `vitest.config.ts` file, add the plugin:
 
 ```ts
-import RandomSeed from 'vitest-plugin-random-seed';
+import RandomSeed from "vitest-plugin-random-seed";
 
 export default defineConfig({
   plugins: [RandomSeed()],
@@ -30,7 +30,7 @@ This plugin really shines when used in combination with [ChanceJS](https://githu
 
 ```ts
 // src/utils/testing/fake-objects.ts
-import seed from 'chance';
+import seed from "chance";
 
 export const chance = seed(__TEST_SEED__);
 
@@ -43,7 +43,7 @@ export function fakeFilename() {
 
 ```ts
 // src/utils/testing/fake-objects.ts
-import { faker } from '@faker-js/faker';
+import { faker } from "@faker-js/faker";
 
 faker.seed(__TEST_SEED__);
 
@@ -56,7 +56,7 @@ export function fakeFilename() {
 
 ```ts
 // src/utils/testing/fake-objects.ts
-import { randDirectoryPath, seed } from '@ngneat/falso';
+import { randDirectoryPath, seed } from "@ngneat/falso";
 
 seed(__TEST_SEED__);
 
@@ -95,8 +95,8 @@ However, if you use `it.only` or `it.skip`, the test result for a file will chan
 
 ```ts
 // vitest.setup.ts
-import { seed } from '@fakerjs/faker';
-import { beforeEach } from 'vitest';
+import { seed } from "@fakerjs/faker";
+import { beforeEach } from "vitest";
 
 beforeEach(() => {
   seed(__TEST_SEED__);

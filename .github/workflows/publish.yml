@@ -5,7 +5,7 @@ on:
 jobs:
   validate:
     name: Validate
-    uses: './.github/workflows/validate.yml'
+    uses: ./.github/workflows/validate.yml
     secrets: inherit
   publish:
     name: Publish

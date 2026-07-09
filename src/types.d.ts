@@ -1,7 +1,8 @@
 /**
  * An integer in the range `[0, Number.MAX_SAFE_INT)`.
  *
- * Generated randomly once per-test run by [`vitest-plugin-random-seed`](https://npmjs.com/package/vitest-plugin-random-seed).
+ * Generated randomly once per-test run by
+ * [`vitest-plugin-random-seed`](https://npmjs.com/package/vitest-plugin-random-seed).
  *
  * Can be set to a static value from the command line:
  *

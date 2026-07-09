@@ -1,6 +1,5 @@
 # Changelog
 
-
 ## v1.1.2
 
 [compare changes](https://github.com/aklinker1/vitest-plugin-random-seed/compare/v1.1.1...v1.1.2)
@@ -65,4 +64,3 @@
 ### 🤖 CI
 
 - Ignore git checks for initial release ([4588ee2](https://github.com/aklinker1/vitest-plugin-random-seed/commit/4588ee2))
-

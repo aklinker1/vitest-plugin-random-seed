@@ -1,0 +1,11 @@
+ignorePaths:
+  - dist
+  - coverage
+ignoreWords:
+  - falso
+  - fakerjs
+  - ngneat
+  - oxlint
+  - aklinker
+  - klinker
+  - bunx
