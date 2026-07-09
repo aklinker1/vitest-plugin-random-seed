@@ -41,9 +41,7 @@ jobs:
           bump: ${{ inputs.bump }}
           publishCommands: |-
             npm publish
-            bunx jsr publish --allow-dirty
           dryRun: ${{ inputs.dryRun }}
           dryRunPublishCommands: |-
             npm publish --dry-run
-            bunx jsr publish --dry-run --allow-dirty
           githubToken: ${{ secrets.GITHUB_TOKEN }}
