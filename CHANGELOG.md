@@ -1,5 +1,18 @@
 # Changelog
 
+## v2.0.1
+
+[compare changes](https://github.com/aklinker1/vitest-plugin-random-seed/compare/v2.0.0...v2.0.1)
+
+### 🩹 Fixes
+
+- Add prepack to fix missing files in NPM package ([`b3b326e`](https://github.com/aklinker1/vitest-plugin-random-seed/commit/b3b326e58e05f7949852bbc812d79dfa2312c6b7))
+
+### ❤️ Contributors
+
+- [@aklinker1](https://github.com/aklinker1)
+
+
 ## v2.0.0
 
 [compare changes](https://github.com/aklinker1/vitest-plugin-random-seed/compare/v1.1.2...v2.0.0)
@@ -32,7 +45,6 @@
 ### ❤️ Contributors
 
 - [@aklinker1](https://github.com/aklinker1)
-
 
 ## v1.1.2
 
