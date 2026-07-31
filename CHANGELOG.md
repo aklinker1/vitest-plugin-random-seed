@@ -1,5 +1,18 @@
 # Changelog
 
+## v2.0.2
+
+[compare changes](https://github.com/aklinker1/vitest-plugin-random-seed/compare/v2.0.1...v2.0.2)
+
+### 🩹 Fixes
+
+- Move `@aklinker1/zero-factory` to dev dependencies ([`31304ee`](https://github.com/aklinker1/vitest-plugin-random-seed/commit/31304ee94d0b5e5d2c8ca859998df09d755f6655))
+
+### ❤️ Contributors
+
+- [@aklinker1](https://github.com/aklinker1)
+
+
 ## v2.0.1
 
 [compare changes](https://github.com/aklinker1/vitest-plugin-random-seed/compare/v2.0.0...v2.0.1)
@@ -11,7 +24,6 @@
 ### ❤️ Contributors
 
 - [@aklinker1](https://github.com/aklinker1)
-
 
 ## v2.0.0
 
