@@ -5,6 +5,7 @@
     "chance",
     "faker",
     "falso",
+    "random",
     "seed",
     "test",
     "vitest"
@@ -38,7 +39,8 @@
   "scripts": {
     "test": "vitest",
     "test:coverage": "vitest --coverage",
-    "build": "tsdown src/{index.ts,types.d.ts} --dts.tsgo",
+    "build": "tsdown src/index.ts --dts.tsgo",
+    "prepack": "bun run build",
     "check": "check",
     "prepublish": "bun run build"
   },
